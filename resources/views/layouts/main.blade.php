@@ -45,7 +45,7 @@
             <div class="main-bar">
                <div class="left-content">
                   <a href="{{ url('/') }}">
-                     <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo-img" (click)="reloadPage()" />
+                     <img src="https://halokatering.com/assets/img/image140.png" alt="Logo" class="logo-img" (click)="reloadPage()" />
                   </a>
                </div>
                <div class="mid-content"></div>
