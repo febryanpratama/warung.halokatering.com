@@ -12,7 +12,7 @@
             <div class="col-md-12">
                 <div class="card py-4">
                     <h1 class="card-title text-center">{{ $data['title'] }}</h1>
-                    <h6 class="card-subtitle text-center">Admin - {{ $data['subdomain']['name_subdomain'] }}</h6>
+                    {{-- <h6 class="card-subtitle text-center">Admin - {{ $data['subdomain']['name_subdomain'] }}</h6> --}}
                     <img 
                         src="{{ $data['path_image'] }}" 
                         class="d-block mx-auto my-2 rounded-top-2"

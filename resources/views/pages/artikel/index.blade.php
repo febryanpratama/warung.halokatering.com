@@ -139,6 +139,7 @@ p {
           <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach ($data as $item)
                 <div class="col">
+                  <a href="{{ url('artikel/'.$item['slug']) }}" class="text-black">
                     <div class="card h-100">
                         <img 
                             src="{{ $item['path_image'] }}" 
@@ -153,10 +154,11 @@ p {
                                 {!! $item['content'] !!}
                             </div>
                             <div class="d-flex justify-content-end">
-                                <a href="{{ url('artikel/'.$item['slug']) }}" class="btn btn-sm btn-outline-primary">Read More</a>
+                                <a href="{{ url('artikel/'.$item['slug']) }}" class="btn btn-sm btn-outline-primary">Baca Detail</a>
                             </div>
                         </div>
                     </div>
+                  </a>
                 </div>
             @endforeach
         </div>
