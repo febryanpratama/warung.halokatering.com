@@ -13,7 +13,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="{{ asset('css/style.css') }}">
       <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-      <title>{{ isset($item) ? $item['title'] . ' | Warung.HaloKatering.com' : 'Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com' }}</title>
+      <title>{{ '  Warung.HaloKatering.com' : 'Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com' }}</title>
 <meta name="title" content="Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com">
 <meta name="description" content="Warung.HaloKatering.com mempertemukan Anda dengan berbagai warung makan dan vendor katering profesional untuk pengalaman kuliner yang lezat dan memuaskan sesuai kebutuhan Anda.">
 <meta name="keywords" content="warung makan, pesan katering, katering murah, katering sehat, katering harian, katering pernikahan, katering acara, kuliner enak, warung nasi, HaloKatering">
