@@ -57,11 +57,11 @@
    </head>
    <body class="antialiased">
       <!-- Header -->
-      <div class="header">
-         <div class="container">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-               <div class="container-fluid">
-                  <a class="navbar-brand" href="#">
+      <div class="header" style="background-color: #fff3f5">
+         <div class="container" style="background-color: #fff3f5">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #fff3f5 !important">
+               <div class="container-fluid" style="background-color: #fff3f5">
+                  <a class="navbar-brand" href="https://www.halokatering.com">
                      <img src="https://www.halokatering.com/_astro/logo.Do7ZvxMk.webp" style="width: 100px; height: 70px" alt="Logo" class="logo-img" (click)="reloadPage()" />
                   </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,14 +69,28 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                      <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                           <a class="nav-link" href="https://restoran.halokatering.com">Restoran</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="https://warung.halokatering.com">Warung</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="https://rumahmakan.halokatering.com">Rumah Makan</a>
+                        </li>
                         <li class="nav-item dropdown">
                            <a class="nav-link dropdown-toggle font-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <b>List Domain</b>
+                              <b>Katering</b>
                            </a>
-                           <ul class="dropdown-menu">
-                              @foreach (App\Helpers\Format::getSubdomain() as $item)
-                                 <li><a class="dropdown-item" href="{{ 'https://'.$item['name_subdomain'] }}" target="_blank">{{ $item['name'] }}</a></li>
-                              @endforeach
+                           <ul class="dropdown-menu" style="min-width: 220px;">
+                              <li><a class="dropdown-item" href="https://katering.halokatering.com" >Katering</a></li>
+                              <li><a class="dropdown-item" href="https://kateringjakarta.halokatering.com" >Katering Jakarta</a></li>
+                              <li><a class="dropdown-item" href="https://kateringsehat.halokatering.com" >Katering Sehat</a></li>
+                              <li><a class="dropdown-item" href="https://kateringmurah.halokatering.com" >Katering Murah</a></li>
+                              <li><a class="dropdown-item" href="https://kateringkantor.halokatering.com" >Katering Kantor</a></li>
+                              <li><a class="dropdown-item" href="https://kateringsurabaya.halokatering.com" >Katering Surabaya</a></li>
+                              <li><a class="dropdown-item" href="https://kateringharian.halokatering.com" >Katering Harian</a></li>
+                              <li><a class="dropdown-item" href="https://kateringrumahan.halokatering.com" >Katering Rumahan</a></li>
                            </ul>
                         </li>
                      </ul>

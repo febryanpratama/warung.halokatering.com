@@ -4,13 +4,38 @@
     {!! App\Helpers\Format::meta($data['meta']) !!}
 @endsection
 
+@section('styles')
+    <style>
+        .card-title {
+            font-size: 1.5rem;       /* Default size (24px jika root font-size 16px) */
+            font-weight: 700;        /* Tebal */
+            line-height: 1.2;
+            margin-bottom: 0.75rem;  /* Jarak bawah */
+            }
+
+            /* Responsif untuk tablet */
+            @media (max-width: 768px) {
+            .card-title {
+               font-size: 1.25rem;    /* Ukuran sedikit lebih kecil */
+            }
+            }
+
+            /* Responsif untuk ponsel */
+            @media (max-width: 480px) {
+            .card-title {
+               font-size: 1.1rem;     /* Ukuran kecil untuk layar sempit */
+            }
+            }
+    </style>
+@endsection
+
 @section('content')
 <div class="post-area">
     <div *ngFor="let story of stories" class="post-card">
        <div class="container" >
           <div class="row">
             <div class="col-md-12">
-                <div class="card py-4">
+                <div class="card px-2 py-4">
                     <h1 class="card-title text-center">{{ $data['title'] }}</h1>
                     {{-- <h6 class="card-subtitle text-center">Admin - {{ $data['subdomain']['name_subdomain'] }}</h6> --}}
                     <img 

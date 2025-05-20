@@ -3,29 +3,50 @@
 @section('styles')
     <style>
       .card {
-  border-radius: 15px;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
+         border-radius: 15px;
+         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+         }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+         .card:hover {
+         transform: scale(1.05);
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+         }
 
-.card-body img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-}
+         .card-body img {
+         width: 80px;
+         height: 80px;
+         object-fit: cover;
+         }
 
-p {
-  font-size: 14px;
-  line-height: 1.4;
-}
+         p {
+         font-size: 14px;
+         line-height: 1.4;
+         }
 
-.container-fluid {
-  background-color: #f5f5f5; /* Sesuaikan dengan background Anda */
-}
+         .container-fluid {
+         background-color: #f5f5f5; /* Sesuaikan dengan background Anda */
+         }
+
+         .card-title {
+            font-size: 1.5rem;       /* Default size (24px jika root font-size 16px) */
+            font-weight: 700;        /* Tebal */
+            line-height: 1.2;
+            margin-bottom: 0.75rem;  /* Jarak bawah */
+            }
+
+            /* Responsif untuk tablet */
+            @media (max-width: 768px) {
+            .card-title {
+               font-size: 1.25rem;    /* Ukuran sedikit lebih kecil */
+            }
+            }
+
+            /* Responsif untuk ponsel */
+            @media (max-width: 480px) {
+            .card-title {
+               font-size: 1.1rem;     /* Ukuran kecil untuk layar sempit */
+            }
+            }
 
     </style>
 @endsection
@@ -63,46 +84,10 @@ p {
                <a href="#" class="categore-box">
                   <div class="container text-center">
                         <div class="row">
-                           {{-- @foreach ($category as $item)
-                              <div class="col story-bx" style="cursor: default">
-                                 <img src="{{ $item->path_icon }}" alt="/" />
-                              </div>
-                           @endforeach --}}
-                           {{-- <div class="col story-bx">
-                           <img src="https://api.justtalk.io//sticker/Love Rollercoasters.png" alt="/" />
-                           </div>
-                           <div class="col story-bx">
-                           <img src="https://api.justtalk.io//sticker/Glow-Up Goals.png" alt="/" />
-                           </div>
-                           <div class="col story-bx">
-                           <img src="https://api.justtalk.io//sticker/Who Even Am I.png" alt="/" />
-                           </div>
-                           <div class="col story-bx">
-                           <img src="https://api.justtalk.io//sticker/Planet Panic.png" alt="/" />
-                           </div> --}}
                         </div>
                   </div>
                   <div class="container text-center container1">
                         <div class="row">
-                           {{-- @foreach ($category as $item)
-                           <div class="col">
-                                    <a href="https://{{ $item->slug }}.ceritain.com">
-                                    <span class="detail">{{ $item->name }}</span>
-                                 </a>
-                                 </div>
-                           @endforeach --}}
-                           {{-- <div class="col">
-                              <span class="detail">Love Rollercoasters</span>
-                           </div>
-                           <div class="col">
-                              <span class="detail">Glow-Up Goals</span>
-                           </div>
-                           <div class="col">
-                              <span class="detail">Who Even Am I</span>
-                           </div>
-                           <div class="col">
-                              <span class="detail">Planet Panic</span>
-                           </div> --}}
                         </div>
                   </div>
                </a>
@@ -115,27 +100,6 @@ p {
 <div class="post-area">
     <div *ngFor="let story of stories" class="post-card">
        <div class="container" >
-          {{-- <div class="row">
-
-            @foreach ($data as $item)
-                <div class="col-md-4 h-100">
-                    <div class="card">
-                        <img 
-                            src="{{ $item['path_image'] }}" 
-                            class="d-block mx-auto rounded-top-2"
-                            alt="/" 
-                        />
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item['title'] }}</h5>
-                            <p class="text-ellipsis">{!! $item['content'] !!}</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="" class="btn btn-sm btn-outline-primary">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-          </div> --}}
           <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach ($data as $item)
                 <div class="col">
@@ -147,7 +111,7 @@ p {
                             alt="/" 
                         />
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">{{ $item['title'] }}</h5>
+                            <h1 class="card-title">{{ $item['title'] }}</h1>
                             <!-- Konten scrollable -->
                             <div class="card-text overflow-hidden flex-grow-1" style="max-height: 200px;">
                                 {{-- <div class="card-text text-truncate" style="max-height: 150px; overflow: hidden;"> --}}
