@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'slide_1_title' => 'Register Your Business & Start Selling',
-    'slide_1_desc' => 'Start selling on EvenPedia now! Register your business and offer services like venue, sound system, talent, MC, band, and more. Reach more customers, collect testimonials, and make them reorder easily on EvenPedia!',
-    'slide_1_cta' => 'Start Selling on Evenpedia',
+    'slide_1_title' => 'Register Your Catering & Start Selling',
+    'slide_1_desc' => 'Complete your business details now and start selling on HaloKatering! Join as a catering partner, promote your packages and menus, reach more customers, invite past clients for testimonials and reorders easily here, and enjoy many other conveniences on HaloKatering.',
+    'slide_1_cta' => 'Start Selling',
 
-    'slide_2_title' => 'Booking venues, event organizers, wedding planners, catering, MUA, and more is easier. Many vendor options at Evenpedia.',
-    'slide_2_desc' => 'From finding vendors, consulting, to managing the entire event, everything is on one platform. Evenpedia connects you with professional vendors that suit your needs and budget, making the process more practical, efficient, and organized.',
-    'slide_2_cta' => 'Find Venue, EO, WO, or Others',
+    'slide_2_title' => 'Practical Solution for Delicious Dishes',
+    'slide_2_desc' => 'Enjoy a variety of delicious catering dishes with the best flavors from HaloKatering! We offer the best catering menus for your events!',
+    'slide_2_cta' => 'Find Nearby Catering',
 ];

@@ -14,8 +14,8 @@ return [
     'subnav_1_3' => 'Katering Murah',
     'subnav_1_4' => 'Katering Kantor',
     'subnav_1_5' => 'Katering Surabaya',
-    'subnav_1_5' => 'Katering Harian',
-    'subnav_1_5' => 'Katering Rumahan',
+    'subnav_1_6' => 'Katering Harian',
+    'subnav_1_7' => 'Katering Rumahan',
 
     'detail' => 'Detail',
     'other_article' => 'Artikel Lainnya',
