@@ -17,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[ArtikelController::class, 'index']);
+Route::get('/lang/{locale}', function ($locale) {
+    if (!in_array($locale, ['en', 'id', 'zh', 'ar'])) {
+        abort(400);
+    }
+
+    session(['locale' => $locale]);
+    $app = app()->setLocale($locale);
+
+    return redirect()->back();
+})->name('lang.switch');
 Route::get('/artikel/{slug}',[ArtikelController::class, 'detailArtikel']);
 Route::get('/category/{slug}',[ArtikelController::class, 'categoryArtikel']);
 
@@ -26,4 +36,8 @@ Route::get('generate/artikel-image', [ArtikelController::class, 'generateArtikel
 
 Route::get('sitemap', function () {
     return response()->file(public_path('sitemap.xml'));
+});
+
+Route::get('kontak-kami', function () {
+    return view('pages.kontak-kami.index');
 });

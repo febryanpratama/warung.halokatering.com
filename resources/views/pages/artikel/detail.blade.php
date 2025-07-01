@@ -1,51 +1,69 @@
 @extends('layouts.main')
 
 @section('meta')
-    {!! App\Helpers\Format::meta($data['meta']) !!}
+        @php
+        $meta = \App\Helpers\Format::getCachedMeta();
+      //   $lang = app()->getLocale() ?? 'id';
+        $lang = 'id';
+    @endphp
+
+   <!-- Meta Item -->
+
+    <title>{{ $meta['meta'][$lang]['title'] ?? 'Digimar.id - Platform Digital Marketing untuk Sosial Media & Email' }}</title>
+    <meta name="description" content="{{ $meta['meta'][$lang]['description'] ?? 'Digimar.id adalah platform digital marketing lengkap untuk posting konten ke Instagram, Twitter, mengirim pesan WhatsApp, dan promosi email secara otomatis dan efisien.' }}">
+    <meta name="keywords" content="{{ $meta['meta'][$lang]['keywords'] ?? 'digital marketing, Digimar, sosial media, instagram, twitter, whatsapp, email marketing, promosi digital, manajemen konten, auto post' }}">
+   <!-- Schema Item -->
+    {{-- Schema Item --}}
+    @if (!empty($meta['schema'][$lang]))
+        @foreach ($meta['schema'][$lang] as $schemaItem)
+            @if (!empty($schemaItem['structured_data']))
+                <script type="application/ld+json">
+                    {!! $schemaItem['structured_data'] !!}
+                </script>
+            @endif
+        @endforeach
+    @endif
 @endsection
 
-@section('styles')
-    <style>
-        .card-title {
-            font-size: 1.5rem;       /* Default size (24px jika root font-size 16px) */
-            font-weight: 700;        /* Tebal */
-            line-height: 1.2;
-            margin-bottom: 0.75rem;  /* Jarak bawah */
-            }
-
-            /* Responsif untuk tablet */
-            @media (max-width: 768px) {
-            .card-title {
-               font-size: 1.25rem;    /* Ukuran sedikit lebih kecil */
-            }
-            }
-
-            /* Responsif untuk ponsel */
-            @media (max-width: 480px) {
-            .card-title {
-               font-size: 1.1rem;     /* Ukuran kecil untuk layar sempit */
-            }
-            }
-    </style>
+@section('meta')
+    {!! App\Helpers\Format::meta($data['meta']) !!}
 @endsection
 
 @section('content')
 <div class="post-area">
     <div *ngFor="let story of stories" class="post-card">
+        @php
+            $locale = App::getLocale();
+            if ($locale === 'id') {
+                $content = $data['content_id'] ?? $data['content'];
+                $title = $data['title_id'] ?? $data['title'];
+            } elseif ($locale === 'en') {
+                $content = $data['content_en'] ?? $data['content'];
+                $title = $data['title_en'] ?? $data['title'];
+            } elseif ($locale === 'zh') {
+                $content = $data['content_zh'] ?? $data['content'];
+                $title = $data['title_zh'] ?? $data['title'];
+            } elseif ($locale === 'ar') {
+                $content = $data['content_ar'] ?? $data['content'];
+                $title = $data['title_ar'] ?? $data['title'];
+            } else {
+                $content = $data['content']; // fallback
+                $title = $data['title']; // fallback
+            }
+        @endphp
        <div class="container" >
           <div class="row">
             <div class="col-md-12">
-                <div class="card px-2 py-4">
-                    <h1 class="card-title text-center">{{ $data['title'] }}</h1>
-                    {{-- <h6 class="card-subtitle text-center">Admin - {{ $data['subdomain']['name_subdomain'] }}</h6> --}}
+                <div class="card py-4">
+                    <h1 class="card-title text-center">{{ $title }}</h1>
                     <img 
                         src="{{ $data['path_image'] }}" 
                         class="d-block mx-auto my-2 rounded-top-2"
                         width="50%"
-                        alt="/" 
+                        alt="{{ $data['slug'] }}" 
                     />
                     <div class="card-body text-justify">
-                        {!! $data['content'] !!}
+                       {!! $content !!}
                     </div>
                 </div>
             </div>
@@ -53,23 +71,37 @@
           
           <div class="row mt-4 d-flex justify-content-center">
             <div class="col-md-12">
-                <h3 class="text-center">Artikel Lainnya</h3>
+                <h3 class="text-center">{{ __('navbar.other_article') }}</h3>
             </div>
 
             @foreach ($data['related_artikel'] as $item)
                 {{-- {{ dd($data->relatedArtikel) }} --}}
+                @php
+                    $locale = App::getLocale();
+                    if ($locale === 'id') {
+                        $title = $item['artikel']['title_id'] ?? $item['artikel']['title'];
+                    } elseif ($locale === 'en') {
+                        $title = $item['artikel']['title_en'] ?? $item['artikel']['title'];
+                    } elseif ($locale === 'zh') {
+                        $title = $item['artikel']['title_zh'] ?? $item['artikel']['title'];
+                    } elseif ($locale === 'ar') {
+                        $title = $item['artikel']['title_ar'] ?? $item['artikel']['title'];
+                    } else {
+                        $title = $item['artikel']['title']; // fallback
+                    }
+                @endphp
             <div class="col-md-4 mt-4">
                 <div class="position-relative">
                     <!-- Gambar -->
                     <img 
                         src="{{ $item['artikel']['path_image'] ?? 'default-image.jpg' }}" 
                         class="d-block mx-auto rounded-top-2 w-100" 
-                        alt="Image of {{ $item['artikel']['title'] }}" 
+                        alt="Image of {{ $title }}" 
                     />
                     <!-- Judul di atas gambar -->
                     <a href="{{ $item['artikel']['slug'] }}" class="stretched-link">
                         <p class="position-absolute bottom-0 start-0 w-100 text-center text-white bg-dark bg-opacity-75 py-2 m-0">
-                            {{ $item['artikel']['title'] }}
+                            {{ $title }}
                         </p>
                     </a>
                 </div>

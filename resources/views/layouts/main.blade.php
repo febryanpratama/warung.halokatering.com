@@ -16,33 +16,33 @@
       <link rel="stylesheet" href="{{ asset('css/style.css') }}">
       <link rel="stylesheet" href="{{ asset('css/app.css') }}">
       <title>{{ '  Warung.HaloKatering.com Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com' }}</title>
-<meta name="title" content="Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com">
-<meta name="description" content="Warung.HaloKatering.com mempertemukan Anda dengan berbagai warung makan dan vendor katering profesional untuk pengalaman kuliner yang lezat dan memuaskan sesuai kebutuhan Anda.">
-<meta name="keywords" content="warung makan, pesan katering, katering murah, katering sehat, katering harian, katering pernikahan, katering acara, kuliner enak, warung nasi, HaloKatering">
-<meta name="author" content="Warung.HaloKatering.com">
-<meta property="og:title" content="Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com">
-<meta property="og:description" content="Cari warung makan dan katering terpercaya? Warung.HaloKatering.com menyediakan pilihan terbaik untuk kuliner lezat dan berkualitas.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://warung.halokatering.com">
-<meta property="og:image" content="https://res.cloudinary.com/dvdkj3x6t/image/upload/v1747205602/halokatering_ph72wx.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com">
-<meta name="twitter:description" content="Dapatkan pengalaman kuliner terbaik dari berbagai warung makan dan vendor katering terpercaya hanya di Warung.HaloKatering.com.">
-<meta name="twitter:image" content="https://res.cloudinary.com/dvdkj3x6t/image/upload/v1747205602/halokatering_ph72wx.png">
+      {{-- <meta name="title" content="Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com">
+      <meta name="description" content="Warung.HaloKatering.com mempertemukan Anda dengan berbagai warung makan dan vendor katering profesional untuk pengalaman kuliner yang lezat dan memuaskan sesuai kebutuhan Anda.">
+      <meta name="keywords" content="warung makan, pesan katering, katering murah, katering sehat, katering harian, katering pernikahan, katering acara, kuliner enak, warung nasi, HaloKatering"> --}}
+      <meta name="author" content="Warung.HaloKatering.com">
+      <meta property="og:title" content="Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com">
+      <meta property="og:description" content="Cari warung makan dan katering terpercaya? Warung.HaloKatering.com menyediakan pilihan terbaik untuk kuliner lezat dan berkualitas.">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://warung.halokatering.com">
+      <meta property="og:image" content="https://res.cloudinary.com/dvdkj3x6t/image/upload/v1747205602/halokatering_ph72wx.png">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Temukan Warung & Katering Terbaik untuk Kuliner Lezat | Warung.HaloKatering.com">
+      <meta name="twitter:description" content="Dapatkan pengalaman kuliner terbaik dari berbagai warung makan dan vendor katering terpercaya hanya di Warung.HaloKatering.com.">
+      <meta name="twitter:image" content="https://res.cloudinary.com/dvdkj3x6t/image/upload/v1747205602/halokatering_ph72wx.png">
 
       <style>
          .card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+         }
 
-.card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+         .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+         }
 
          .text-ellipsis {
              display: -webkit-box;
@@ -70,27 +70,55 @@
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                      <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                           <a class="nav-link" href="https://restoran.halokatering.com">Restoran</a>
+                           <a class="nav-link" href="https://restoran.halokatering.com">{{ __('navbar.nav_1') }}</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="https://warung.halokatering.com">Warung</a>
+                           <a class="nav-link" href="https://warung.halokatering.com">{{ __('navbar.nav_2') }}</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="https://rumahmakan.halokatering.com">Rumah Makan</a>
+                           <a class="nav-link" href="https://rumahmakan.halokatering.com">{{ __('navbar.nav_3') }}</a>
                         </li>
                         <li class="nav-item dropdown">
                            <a class="nav-link dropdown-toggle font-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <b>Katering</b>
+                              <b>{{ __('navbar.nav_4') }}</b>
                            </a>
                            <ul class="dropdown-menu" style="min-width: 220px;">
-                              <li><a class="dropdown-item" href="https://katering.halokatering.com" >Katering</a></li>
-                              <li><a class="dropdown-item" href="https://kateringjakarta.halokatering.com" >Katering Jakarta</a></li>
-                              <li><a class="dropdown-item" href="https://kateringsehat.halokatering.com" >Katering Sehat</a></li>
-                              <li><a class="dropdown-item" href="https://kateringmurah.halokatering.com" >Katering Murah</a></li>
-                              <li><a class="dropdown-item" href="https://kateringkantor.halokatering.com" >Katering Kantor</a></li>
-                              <li><a class="dropdown-item" href="https://kateringsurabaya.halokatering.com" >Katering Surabaya</a></li>
-                              <li><a class="dropdown-item" href="https://kateringharian.halokatering.com" >Katering Harian</a></li>
-                              <li><a class="dropdown-item" href="https://kateringrumahan.halokatering.com" >Katering Rumahan</a></li>
+                              <li><a class="dropdown-item" href="https://katering.halokatering.com" >{{ __('navbar.subnav_1_0') }}</a></li>
+                              <li><a class="dropdown-item" href="https://kateringjakarta.halokatering.com" >{{ __('navbar.subnav_1_1') }}</a></li>
+                              <li><a class="dropdown-item" href="https://kateringsehat.halokatering.com" >{{ __('navbar.subnav_1_2') }}</a></li>
+                              <li><a class="dropdown-item" href="https://kateringmurah.halokatering.com" >{{ __('navbar.subnav_1_3') }}</a></li>
+                              <li><a class="dropdown-item" href="https://kateringkantor.halokatering.com" >{{ __('navbar.subnav_1_4') }}</a></li>
+                              <li><a class="dropdown-item" href="https://kateringsurabaya.halokatering.com" >{{ __('navbar.subnav_1_5') }}</a></li>
+                              <li><a class="dropdown-item" href="https://kateringharian.halokatering.com" >{{ __('navbar.subnav_1_6') }}</a></li>
+                              <li><a class="dropdown-item" href="https://kateringrumahan.halokatering.com" >{{ __('navbar.subnav_1_7') }}</a></li>
+                           </ul>
+                        </li>
+                        @php
+                            $locale = App::getLocale();
+
+                           //  dd($locale);
+                              if ($locale === 'id') {
+                                 $lang = __('navbar.nav_5');
+                              } elseif ($locale === 'en') {
+                                 $lang = __('navbar.nav_5');
+                              } elseif ($locale === 'zh') {
+                                 $lang = __('navbar.nav_5');
+                              } elseif ($locale === 'ar') {
+                                 $lang = __('navbar.nav_5');
+                              } else {
+                                 $lang = __('navbar.nav_5'); // default
+                              }
+                        @endphp
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle font-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <img src="{{ __('navbar.image_nav') }}" style="width: 15px; height: 15px;margin-right: 2px" class="mr-2" alt="">
+                              <b>{{ $lang }}</b>
+                           </a>
+                           <ul class="dropdown-menu" style="min-width: 160px;">
+                              <li><a class="dropdown-item" href="#" onclick="changeLanguage('id')"><img src="https://www.indonesiacore.com/_astro/id.COWC0E3n.svg" style="width: 15px; height: 15px;margin-right: 2px" class="mr-2" alt=""><span>Indonesia</span></a></li>
+                              <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')"><img src="https://www.indonesiacore.com/_astro/en.DTXiLQoe.svg" style="width: 15px; height: 15px;margin-right: 2px" class="mr-2" alt=""><span>English</span></a></li>
+                              <li><a class="dropdown-item" href="#" onclick="changeLanguage('zh')"><img src="https://www.indonesiacore.com/_astro/zh.DifnnI3t.svg" style="width: 15px; height: 15px;margin-right: 2px" class="mr-2" alt="">中文</a></li>
+                              <li><a class="dropdown-item" href="#" onclick="changeLanguage('ar')"><img src="https://www.indonesiacore.com/_astro/sa.DMELvfVN.svg" style="width: 15px; height: 15px;margin-right: 2px" class="mr-2" alt=""><span>العربية</span></a></li>
                            </ul>
                         </li>
                      </ul>
@@ -108,6 +136,11 @@
          @yield('content')
       </div>
       <!-- Page Content End-->
+      <script>
+         function changeLanguage(locale) {
+            window.location.href = `/lang/${locale}`;
+         }
+      </script>
       <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-0X74DBTNBE"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0X74DBTNBE'); </script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

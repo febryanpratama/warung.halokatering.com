@@ -2,6 +2,9 @@
 
 namespace App\Helpers;
 
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+
 class Format
 {
     public static function meta($text)
@@ -56,5 +59,40 @@ class Format
             // \Log::error("Error getting subdomain: " . $e->getMessage());
             return null;
         }
+    }
+
+    public static function getCachedMeta(?string $targetUrl = null)
+    {
+        // Jika tidak diberikan URL, pakai URL saat ini
+        // $targetUrl = $targetUrl ?? Request::fullUrl();
+        // $targetUrl = 'https://www.digimar.id';
+        $targetUrl = "https://warung.halokatering.com";
+
+        // dd($targetUrl);
+        if (!filter_var($targetUrl, FILTER_VALIDATE_URL)) {
+            return null;
+        }
+
+        // Buat cache key dari md5 URL
+        $cacheKey = 'meta_' . md5($targetUrl);
+
+        return Cache::remember($cacheKey, now()->addHours(6), function () use ($targetUrl) {
+            $response = Http::withoutVerifying()
+            ->withHeaders([
+                'Accept' => 'application/json',
+                'x-api-key' => 'sk-5d8a894adea243f88c850e9ea72a393d'
+            ])
+            ->get('https://blog.indonesiacore.com/api/meta-subdomains', [
+                'url' => $targetUrl,
+            ]);
+
+            // dd($response->json());
+
+            if ($response->successful() && $response->json('status')) {
+                return $response->json('data');
+            }
+
+            return null;
+        });
     }
 }
